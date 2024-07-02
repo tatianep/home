@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "tatianesantos.github.io/static/css/main.f855e6bc.css",
-    "main.js": "tatianesantos.github.io/static/js/main.319114de.js",
-    "static/js/453.a17b4f0f.chunk.js": "tatianesantos.github.io/static/js/453.a17b4f0f.chunk.js",
-    "index.html": "tatianesantos.github.io/index.html",
-    "main.f855e6bc.css.map": "tatianesantos.github.io/static/css/main.f855e6bc.css.map",
-    "main.319114de.js.map": "tatianesantos.github.io/static/js/main.319114de.js.map",
-    "453.a17b4f0f.chunk.js.map": "tatianesantos.github.io/static/js/453.a17b4f0f.chunk.js.map"
+    "main.css": "https://tatianep.github.io/tatianesantos.github.io/static/css/main.f855e6bc.css",
+    "main.js": "https://tatianep.github.io/tatianesantos.github.io/static/js/main.02719ded.js",
+    "static/js/453.a17b4f0f.chunk.js": "https://tatianep.github.io/tatianesantos.github.io/static/js/453.a17b4f0f.chunk.js",
+    "index.html": "https://tatianep.github.io/tatianesantos.github.io/index.html",
+    "main.f855e6bc.css.map": "https://tatianep.github.io/tatianesantos.github.io/static/css/main.f855e6bc.css.map",
+    "main.02719ded.js.map": "https://tatianep.github.io/tatianesantos.github.io/static/js/main.02719ded.js.map",
+    "453.a17b4f0f.chunk.js.map": "https://tatianep.github.io/tatianesantos.github.io/static/js/453.a17b4f0f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.319114de.js"
+    "static/js/main.02719ded.js"
   ]
 }
