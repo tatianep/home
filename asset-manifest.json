@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/tatianesantos.github.io/static/css/main.606dddd9.css",
-    "main.js": "/tatianesantos.github.io/static/js/main.9baf6e5e.js",
+    "main.js": "/tatianesantos.github.io/static/js/main.3d97f186.js",
     "static/js/453.19c7e6ca.chunk.js": "/tatianesantos.github.io/static/js/453.19c7e6ca.chunk.js",
     "static/media/hashirshoaeb.png": "/tatianesantos.github.io/static/media/hashirshoaeb.23e8b5a1f7de87f03d05.png",
     "static/media/tatianesantos.jpg": "/tatianesantos.github.io/static/media/tatianesantos.5ff577465b95d3133c7b.jpg",
     "index.html": "/tatianesantos.github.io/index.html",
     "main.606dddd9.css.map": "/tatianesantos.github.io/static/css/main.606dddd9.css.map",
-    "main.9baf6e5e.js.map": "/tatianesantos.github.io/static/js/main.9baf6e5e.js.map",
+    "main.3d97f186.js.map": "/tatianesantos.github.io/static/js/main.3d97f186.js.map",
     "453.19c7e6ca.chunk.js.map": "/tatianesantos.github.io/static/js/453.19c7e6ca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.606dddd9.css",
-    "static/js/main.9baf6e5e.js"
+    "static/js/main.3d97f186.js"
   ]
 }
