@@ -73,9 +73,9 @@ const Navigation = React.forwardRef((props, ref) => {
           {about.show && (
             <NavLink onClick={() => scrollToSection('projects')}>Projects</NavLink>
           )}
-          {skills.show && (
+          {/* {skills.show && (
             <NavLink onClick={() => scrollToSection('skills')}>Skills</NavLink>
-          )}
+          )} */}
           <a 
             href={about.resume} 
             target="_blank" 

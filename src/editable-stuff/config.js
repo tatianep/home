@@ -166,6 +166,29 @@ const experiences = {
   ]
 }
 
+const education = {
+  show: true,
+  heading: "Education",
+  data: [
+  {
+    school: 'Fluminense Federal University',
+    degree: 'Ph.D.',
+    field: 'Condensed Matter Physics',
+    date: '2014 - 2018',
+    schoolLogo: require('../assets/img/UFF.png'),
+    schoolUrl: 'https://www.uff.br/'
+  },
+  {
+    school: 'ABC Federal University',
+    degree: 'M.Sc., B.Sc. and B.Eng.',
+    field: 'Physics',
+    date: '2008 - 2014',
+    schoolLogo: require('../assets/img/UFABC2.png'),
+    schoolUrl: 'https://www.ufabc.edu.br/'
+  }
+  ]
+}
+
 // Blog SECTION
 const blog = {
   show: true
@@ -234,6 +257,6 @@ const awards = {
   ]
 };
 
-export { navBar, mainBody, about, repos, skills, publications, awards, getInTouch, experiences};
+export { navBar, mainBody, about, repos, skills, publications, awards, getInTouch, experiences, education};
 
 // export { navBar, mainBody, about, repos, skills, leadership, blog, getInTouch, experiences};

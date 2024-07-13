@@ -10,7 +10,8 @@ import {
   //leadership,
   skills,
   getInTouch,
-  experiences
+  experiences,
+  education
 } from "./editable-stuff/config.js";
 import MainBody from "./components/home/MainBody";
 import AboutMe from "./components/home/AboutMe";
@@ -45,11 +46,6 @@ const Home = React.forwardRef((props, ref) => {
           resume={about.resume}
         />
       )}
-      {
-        experiences.show && (
-          <Experience experiences={experiences}/>
-        )
-      }
       {repos.show && (
         <Project
           heading={repos.heading}
@@ -58,6 +54,11 @@ const Home = React.forwardRef((props, ref) => {
           specfic={repos.specificRepos}
         />
       )}
+      {
+        experiences.show && (
+          <Experience experiences={experiences} education={education} />
+        )
+      }
       {/* {leadership.show && (
         <Leadership
           heading={leadership.heading}
