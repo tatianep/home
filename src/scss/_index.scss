@@ -129,3 +129,32 @@ code {
     animation: progress 1.5s ease-in-out forwards;
   }
 }
+
+
+#awards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; // Adds padding around the content for better spacing
+  text-align: center; // Centers the text within the section
+
+  h2, h3 {
+    color: #444; // Dark gray color for headers
+  }
+
+  p {
+    color: #666; // Lighter gray for paragraph text
+    
+  }
+
+  a {
+    color: #0056b3; // Bootstrap default link color
+    text-decoration: none; // Removes underline from links
+
+    &:hover {
+      text-decoration: underline; // Adds underline on hover for links
+    }
+  }
+}
+
