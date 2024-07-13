@@ -54,7 +54,7 @@ const about = {
   imageLink: require("../editable-stuff/tatianesantos3.jpg"),
   imageSize: 375,
   message:
-    "My name is Tatiane Santos. I’m a Physics PhD and Data Scientist of the Artificial Intelligence team of a US Fortune 50 company. I'm most passionate about having an impact in society, and my goal is to pursue this passion through data (and science!). In my free time I like playing Brazilian classical acoustic guitar music and learning new languages. I also enjoy working on small/medium data projects, you can find out more about them here",
+    "My name is Tatiane Santos. I'm a Physics PhD and Data Scientist on the Artificial Intelligence team at a US Fortune 50 company. I am passionate about making an impact in society, and my goal is to develop my skill set so I'm ready when opportunities arise! In my free time, I enjoy playing Brazilian classical acoustic guitar music and learning new languages. I also like working on small to medium data projects, which you can learn more about here.",
   resume: "https://docs.google.com/document/d/1mm9zCV_uMFJPMB-KjE_pwG0j2_o92bBrCG4HQh0WoO8/edit?usp=sharing",
 };
 

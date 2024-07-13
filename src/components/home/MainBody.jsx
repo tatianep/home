@@ -5,6 +5,18 @@ import { Jumbotron } from "./migration";
 
 const MainBody = React.forwardRef(
   ({ gradient, title, message, icons }, ref) => {
+
+    // Function to handle scroll
+    const handleScroll = (e) => {
+      e.preventDefault();
+      const aboutSection = document.getElementById('aboutme');
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.error('Section #aboutme not found');
+      }
+    };
+
     return (
       <Jumbotron
         fluid
@@ -38,11 +50,13 @@ const MainBody = React.forwardRef(
               </a>
             ))}
           </div>
+          
           <a
             className="btn btn-outline-light btn-lg "
             href="#aboutme"
             role="button"
             aria-label="Learn more about me"
+            onClick={handleScroll}
           >
             More about me
           </a>

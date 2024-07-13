@@ -6,12 +6,18 @@ import Nav from "react-bootstrap/Nav";
 import { mainBody, repos, about, skills } from "../editable-stuff/config.js";
 import { NavLink } from "./home/migration";
 
-const scrollToSection = (sectionId) => {
-  const section = document.getElementById(sectionId);
+const scrollToSection = (id) => {
+  const section = document.getElementById(id);
   if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({
+      top: section.offsetTop,
+      behavior: 'smooth'
+    });
+  } else {
+    console.error('Section not found:', id);
   }
 };
+
 
 const Navigation = React.forwardRef((props, ref) => {
   // const { showBlog, FirstName } = config;
