@@ -151,7 +151,7 @@ const experiences = {
     },
     {
       role: 'Reseacher',
-      companylogo: require('../assets/img/Illinois.png'),
+      companylogo: require('../assets/img/Illinois2.png'),
       date: 'January 2019 – November 2021',
       companyName: 'University of Illinois at Urbana-Champaign',
       companyUrl: 'https://illinois.edu/'

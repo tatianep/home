@@ -10,7 +10,7 @@ const PublicationItem = ({ publication }) => {
 
   const renderAbstract = (text) => {
     if (showFullAbstract) return text;
-    return `${text.substring(0, 200)}... `; // Adjust 200 to the desired number of characters
+    return `${text.substring(0, 150)}... `; // Adjust 200 to the desired number of characters
   };
 
   return (
