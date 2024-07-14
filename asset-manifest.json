@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "https://tatianep.github.io/home/static/css/main.56ef3505.css",
-    "main.js": "https://tatianep.github.io/home/static/js/main.40f515b1.js",
-    "static/js/453.19c7e6ca.chunk.js": "https://tatianep.github.io/home/static/js/453.19c7e6ca.chunk.js",
-    "static/media/tatianesantos3.jpg": "https://tatianep.github.io/home/static/media/tatianesantos3.5a9cc4ac2804f3100b4a.jpg",
-    "static/media/UFF.png": "https://tatianep.github.io/home/static/media/UFF.c47f1d3e00d29d5f3c63.png",
-    "static/media/ADM.png": "https://tatianep.github.io/home/static/media/ADM.a89bd6cd347f51d9c4ac.png",
-    "static/media/UFABC2.png": "https://tatianep.github.io/home/static/media/UFABC2.5352e533587a4725d20c.png",
-    "static/media/CEA.png": "https://tatianep.github.io/home/static/media/CEA.c80f27d679114a922531.png",
-    "static/media/Illinois2.png": "https://tatianep.github.io/home/static/media/Illinois2.7e900193030c5177be83.png",
-    "static/media/Wildlife.png": "https://tatianep.github.io/home/static/media/Wildlife.69c76197b6ee350f6c83.png",
-    "index.html": "https://tatianep.github.io/home/index.html",
-    "main.56ef3505.css.map": "https://tatianep.github.io/home/static/css/main.56ef3505.css.map",
-    "main.40f515b1.js.map": "https://tatianep.github.io/home/static/js/main.40f515b1.js.map",
-    "453.19c7e6ca.chunk.js.map": "https://tatianep.github.io/home/static/js/453.19c7e6ca.chunk.js.map"
+    "main.css": "/home/static/css/main.56ef3505.css",
+    "main.js": "/home/static/js/main.32eff3ea.js",
+    "static/js/453.19c7e6ca.chunk.js": "/home/static/js/453.19c7e6ca.chunk.js",
+    "static/media/tatianesantos3.jpg": "/home/static/media/tatianesantos3.5a9cc4ac2804f3100b4a.jpg",
+    "static/media/UFF.png": "/home/static/media/UFF.c47f1d3e00d29d5f3c63.png",
+    "static/media/ADM.png": "/home/static/media/ADM.a89bd6cd347f51d9c4ac.png",
+    "static/media/UFABC2.png": "/home/static/media/UFABC2.5352e533587a4725d20c.png",
+    "static/media/CEA.png": "/home/static/media/CEA.c80f27d679114a922531.png",
+    "static/media/Illinois2.png": "/home/static/media/Illinois2.7e900193030c5177be83.png",
+    "static/media/Wildlife.png": "/home/static/media/Wildlife.69c76197b6ee350f6c83.png",
+    "index.html": "/home/index.html",
+    "main.56ef3505.css.map": "/home/static/css/main.56ef3505.css.map",
+    "main.32eff3ea.js.map": "/home/static/js/main.32eff3ea.js.map",
+    "453.19c7e6ca.chunk.js.map": "/home/static/js/453.19c7e6ca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.56ef3505.css",
-    "static/js/main.40f515b1.js"
+    "static/js/main.32eff3ea.js"
   ]
 }
