@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "https://tatianep.github.io/tatianesantos.github.io/static/css/main.8215d050.css",
+    "main.css": "https://tatianep.github.io/tatianesantos.github.io/static/css/main.56ef3505.css",
     "main.js": "https://tatianep.github.io/tatianesantos.github.io/static/js/main.fdb5ec07.js",
     "static/js/453.19c7e6ca.chunk.js": "https://tatianep.github.io/tatianesantos.github.io/static/js/453.19c7e6ca.chunk.js",
     "static/media/tatianesantos3.jpg": "https://tatianep.github.io/tatianesantos.github.io/static/media/tatianesantos3.5a9cc4ac2804f3100b4a.jpg",
@@ -11,12 +11,12 @@
     "static/media/Illinois2.png": "https://tatianep.github.io/tatianesantos.github.io/static/media/Illinois2.7e900193030c5177be83.png",
     "static/media/Wildlife.png": "https://tatianep.github.io/tatianesantos.github.io/static/media/Wildlife.69c76197b6ee350f6c83.png",
     "index.html": "https://tatianep.github.io/tatianesantos.github.io/index.html",
-    "main.8215d050.css.map": "https://tatianep.github.io/tatianesantos.github.io/static/css/main.8215d050.css.map",
+    "main.56ef3505.css.map": "https://tatianep.github.io/tatianesantos.github.io/static/css/main.56ef3505.css.map",
     "main.fdb5ec07.js.map": "https://tatianep.github.io/tatianesantos.github.io/static/js/main.fdb5ec07.js.map",
     "453.19c7e6ca.chunk.js.map": "https://tatianep.github.io/tatianesantos.github.io/static/js/453.19c7e6ca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8215d050.css",
+    "static/css/main.56ef3505.css",
     "static/js/main.fdb5ec07.js"
   ]
 }
