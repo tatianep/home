@@ -9,24 +9,32 @@ import { publications } from "../data/profile";
       <h2>Selected papers</h2>
       <p class="lede">
         Peer-reviewed work spanning quantum devices, computational materials,
-        and machine learning for physics.
+        and machine learning for physics. Click a row for the abstract.
       </p>
     </div>
 
     <ol class="papers">
       {publications.map((pub, i) => (
         <li data-reveal style={`--reveal-i: ${Math.min(i, 4)}`}>
-          <a class="paper" href={pub.url} target="_blank" rel="noopener">
-            <span class="year">{pub.year}</span>
-            <span class="body">
-              <span class="title">{pub.title}</span>
-              <span class="venue">
-                {pub.venue}
-                {pub.note && <span class="note">{pub.note}</span>}
+          <details class="paper">
+            <summary>
+              <span class="year">{pub.year}</span>
+              <span class="body">
+                <span class="title">{pub.title}</span>
+                <span class="venue">
+                  {pub.venue}
+                  {pub.note && <span class="note">{pub.note}</span>}
+                </span>
               </span>
-            </span>
-            <span class="ext" aria-hidden="true">↗</span>
-          </a>
+              <span class="toggle" aria-hidden="true">+</span>
+            </summary>
+            <div class="abstract">
+              <p>{pub.abstract}</p>
+              <a class="mlink" href={pub.url} target="_blank" rel="noopener">
+                read the paper ↗
+              </a>
+            </div>
+          </details>
         </li>
       ))}
     </ol>
@@ -40,18 +48,26 @@ import { publications } from "../data/profile";
     padding: 0;
   }
 
-  .paper {
+  li {
+    border-top: 1px solid var(--line);
+  }
+
+  li:first-child {
+    border-top: 0;
+  }
+
+  summary {
     display: grid;
     grid-template-columns: 5.5rem 1fr auto;
     gap: clamp(1rem, 3vw, 2.5rem);
     align-items: baseline;
     padding-block: 1.6rem;
-    border-top: 1px solid var(--line);
-    transition: background 0.25s ease;
+    cursor: pointer;
+    list-style: none;
   }
 
-  li:first-child .paper {
-    border-top: 0;
+  summary::-webkit-details-marker {
+    display: none;
   }
 
   .year {
@@ -81,7 +97,8 @@ import { publications } from "../data/profile";
     transition: background-size 0.35s ease;
   }
 
-  .paper:hover .title {
+  .paper:hover .title,
+  .paper[open] .title {
     background-size: 100% 1px;
   }
 
@@ -100,24 +117,83 @@ import { publications } from "../data/profile";
     color: var(--teal);
   }
 
-  .ext {
+  .toggle {
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
     color: var(--text-3);
-    font-size: 0.9rem;
-    transition: color 0.25s ease, transform 0.25s ease;
+    transition: color 0.25s ease, rotate 0.3s ease;
   }
 
-  .paper:hover .ext {
+  .paper:hover .toggle {
     color: var(--teal);
-    transform: translate(2px, -2px);
+  }
+
+  .paper[open] .toggle {
+    rotate: 45deg;
+    color: var(--teal);
+  }
+
+  .abstract {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    padding-bottom: 1.7rem;
+  }
+
+  .abstract::before {
+    content: "";
+  }
+
+  .abstract p {
+    max-width: 64ch;
+    font-size: 0.92rem;
+    color: var(--text-2);
+    margin: 0 0 0.9rem;
+  }
+
+  .abstract .mlink {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  /* Smooth open animation where supported */
+  .paper::details-content {
+    block-size: 0;
+    overflow: clip;
+    opacity: 0;
+    transition:
+      block-size 0.4s cubic-bezier(0.2, 0.55, 0.25, 1),
+      content-visibility 0.4s allow-discrete,
+      opacity 0.35s ease;
+  }
+
+  .paper[open]::details-content {
+    block-size: auto;
+    block-size: calc-size(auto, size);
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .paper::details-content {
+      transition: none;
+    }
   }
 
   @media (max-width: 640px) {
-    .paper {
+    summary {
       grid-template-columns: 1fr auto;
     }
 
     .year {
       grid-column: 1 / -1;
+    }
+
+    .abstract {
+      grid-template-columns: 1fr;
+    }
+
+    .abstract::before {
+      display: none;
     }
   }
 </style>

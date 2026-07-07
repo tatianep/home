@@ -4,6 +4,9 @@ import "@fontsource-variable/fraunces/wght-italic.css";
 import "@fontsource-variable/inter";
 import "@fontsource/ibm-plex-mono/400.css";
 import "@fontsource/ibm-plex-mono/500.css";
+import frauncesUrl from "@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url";
+import frauncesItalicUrl from "@fontsource-variable/fraunces/files/fraunces-latin-wght-italic.woff2?url";
+import interUrl from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
 import "../styles/global.css";
 import { identity } from "../data/profile";
 
@@ -57,7 +60,11 @@ const jsonLd = JSON.stringify({
     <meta name="theme-color" content="#0a0b0f" />
     <link rel="canonical" href={canonical.href} />
     <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
-    <link rel="icon" href={`${base}/favicon.ico`} sizes="32x32" />
+    <link rel="icon" href={`${base}/favicon-32.png`} type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href={`${base}/apple-touch-icon.png`} />
+    <link rel="preload" href={frauncesUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={frauncesItalicUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={interUrl} as="font" type="font/woff2" crossorigin />
     <meta name="generator" content={Astro.generator} />
 
     <meta property="og:type" content="website" />
@@ -100,6 +107,15 @@ const jsonLd = JSON.stringify({
       } else {
         revealed.forEach((el) => el.classList.add("is-visible"));
       }
+
+      console.log(
+        "%c|ψ⟩ = α|quantum⟩ + β|AI⟩",
+        "font-family:monospace;font-size:14px;color:#5fd4c2;",
+      );
+      console.log(
+        "%cCurious minds welcome — the source lives at github.com/tatianep/home",
+        "font-family:monospace;color:#8f8aef;",
+      );
     </script>
   </body>
 </html>

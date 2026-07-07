@@ -63,3 +63,18 @@ await sharp(Buffer.from(svg))
   .toFile(join(root, "public", "og.png"));
 
 console.log("public/og.png written");
+
+// Favicon PNG fallbacks, rendered from the SVG mark.
+import { readFile } from "node:fs/promises";
+const faviconSvg = await readFile(join(root, "public", "favicon.svg"));
+
+for (const [name, size] of [
+  ["favicon-32.png", 32],
+  ["apple-touch-icon.png", 180],
+]) {
+  await sharp(faviconSvg, { density: 300 })
+    .resize(size, size)
+    .png()
+    .toFile(join(root, "public", name));
+  console.log(`public/${name} written`);
+}

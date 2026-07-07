@@ -162,6 +162,40 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     color: var(--teal);
   }
 
+  /* entrance sequence */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-inner > * {
+      animation: hero-in 0.9s cubic-bezier(0.2, 0.55, 0.25, 1) both;
+    }
+
+    .status { animation-delay: 0.08s; }
+    .name { animation-delay: 0.18s; }
+    .role { animation-delay: 0.3s; }
+    .tagline { animation-delay: 0.42s; }
+    .actions { animation-delay: 0.54s; }
+
+    .strip {
+      animation: hero-in 0.9s cubic-bezier(0.2, 0.55, 0.25, 1) 0.75s both;
+    }
+
+    #wavefield {
+      animation: wave-in 2.2s ease 0.3s both;
+    }
+  }
+
+  @keyframes hero-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+  }
+
+  @keyframes wave-in {
+    from {
+      opacity: 0;
+    }
+  }
+
   @media (max-width: 980px) {
     .strip {
       font-size: 0.62rem;

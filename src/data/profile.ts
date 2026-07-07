@@ -147,6 +147,7 @@ export interface Publication {
   venue: string;
   url: string;
   note?: string;
+  abstract: string;
 }
 
 export const publications: Publication[] = [
@@ -157,6 +158,8 @@ export const publications: Publication[] = [
     venue: "arXiv · Microsoft Quantum",
     url: "https://arxiv.org/abs/2507.08795",
     note: "Topological qubit measurements",
+    abstract:
+      "Single-shot interferometric measurements of fermion parity on the X and Z loops of a Majorana tetron reveal two widely separated timescales — τ_X ≈ 14.5 µs and τ_Z ≈ 12.4 ms — attributed to intra-wire parity switches and external quasiparticle poisoning, respectively.",
   },
   {
     year: "2022",
@@ -164,12 +167,16 @@ export const publications: Publication[] = [
       "Electron dynamics in extended systems within real-time time-dependent density-functional theory",
     venue: "MRS Communications · Springer",
     url: "https://link.springer.com/article/10.1557/s43579-022-00273-7",
+    abstract:
+      "A review of real-time TDDFT for electron dynamics in complex, extended systems — the computational cost of numerical propagation, absorbing boundary conditions, and the limits of describing electron–electron scattering — centered on the Qb@ll code.",
   },
   {
     year: "2021",
     title: "The 2021 ultrafast spectroscopic probes of condensed matter roadmap",
     venue: "Journal of Physics: Condensed Matter · IOP",
     url: "https://iopscience.iop.org/article/10.1088/1361-648X/abfe21",
+    abstract:
+      "A community roadmap surveying the state of the art in ultrafast probes of condensed matter — tracking charges, spins, and atoms from attoseconds to nanoseconds — and the experimental and theoretical challenges ahead.",
   },
   {
     year: "2020",
@@ -178,6 +185,8 @@ export const publications: Publication[] = [
     venue: "Nano Letters · ACS",
     url: "https://pubs.acs.org/doi/10.1021/acs.nanolett.0c00269",
     note: "100+ citations",
+    abstract:
+      "Deep learning mines large sets of aberration-corrected STEM images to locate and classify single-atom defects in WSe₂₋₂ₓTe₂ₓ, measuring atomic spacings with up to 0.2 pm precision and revealing oscillating strain fields around Se vacancies.",
   },
   {
     year: "2019",
@@ -185,6 +194,8 @@ export const publications: Publication[] = [
       "An order N numerical method to efficiently calculate the transport properties of large systems",
     venue: "Journal of Computational Physics · Elsevier",
     url: "https://doi.org/10.1016/j.jcp.2019.05.034",
+    abstract:
+      "A wave-function-matching formulation of Landauer-Büttiker quantum transport whose operation count scales linearly with system size, achieved by exploiting the sparsity of the central region's Hamiltonian with efficient sparse linear solvers.",
   },
 ];
 
