@@ -4,6 +4,8 @@ Personal site of **Tatiane Santos, Ph.D.** — quantum engineer & AI scientist a
 
 **Live site »** [tatianep.github.io/home](https://tatianep.github.io/home)
 
+[![Site preview](public/og.png)](https://tatianep.github.io/home)
+
 ## Stack
 
 - [Astro 5](https://astro.build) — static output, zero JS by default; the only scripts shipped are the hero canvas, scroll reveals, and the live GitHub projects fetch
