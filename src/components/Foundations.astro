@@ -1,0 +1,137 @@
+---
+import { education, honors, teaching, skills } from "../data/profile";
+---
+
+<section id="foundations" class="section">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="kicker"><b>05</b> — Foundations</p>
+      <h2>Education, honors &amp; toolkit</h2>
+    </div>
+
+    <div class="cols">
+      <div class="col" data-reveal style="--reveal-i: 1">
+        <h3 class="col-title kicker">Education</h3>
+        <ul role="list">
+          {education.map((e) => (
+            <li>
+              <span class="item-title">{e.degree}</span>
+              <span class="item-sub">{e.school}</span>
+              <span class="item-date">{e.date}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="col" data-reveal style="--reveal-i: 2">
+        <h3 class="col-title kicker">Honors</h3>
+        <ul role="list">
+          {honors.map((h) => (
+            <li>
+              <span class="item-title">{h.title}</span>
+              <span class="item-sub">{h.org}</span>
+              <span class="item-date">{h.year}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="col" data-reveal style="--reveal-i: 3">
+        <h3 class="col-title kicker">Teaching</h3>
+        <ul role="list">
+          {teaching.map((t) => (
+            <li>
+              <span class="item-title">{t.title}</span>
+              <span class="item-sub">{t.org}</span>
+              <span class="item-date">{t.year}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="skills" data-reveal style="--reveal-i: 2">
+      {skills.map((g) => (
+        <div class="skill-group">
+          <h3 class="col-title kicker">{g.group}</h3>
+          <ul class="tags" role="list">
+            {g.items.map((s) => <li class="chip">{s}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cols {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: clamp(3rem, 7vh, 5rem);
+  }
+
+  .col-title {
+    margin: 0 0 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--line);
+    font-weight: 500;
+  }
+
+  .col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+  }
+
+  .col li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .item-title {
+    color: var(--text);
+    font-size: 0.94rem;
+    line-height: 1.45;
+  }
+
+  .item-sub {
+    font-size: 0.85rem;
+    color: var(--text-2);
+  }
+
+  .item-date {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--text-3);
+    margin-top: 0.2rem;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (max-width: 860px) {
+    .cols,
+    .skills {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+import Base from "../layouts/Base.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<Base title="404 — Tatiane Santos">
+  <main class="lost">
+    <p class="kicker">measurement error</p>
+    <h1>4<span class="zero">0</span>4</h1>
+    <p class="explain">
+      This page is in a state that, upon observation, collapsed to nothing.
+    </p>
+    <a class="cta" href={`${base}/`}>← return to a known state</a>
+  </main>
+</Base>
+
+<style>
+  .lost {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.4rem;
+    padding: var(--pad);
+  }
+
+  h1 {
+    font-size: clamp(5rem, 18vw, 10rem);
+    font-weight: 380;
+    letter-spacing: 0.02em;
+  }
+
+  .zero {
+    font-style: italic;
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .explain {
+    max-width: 34ch;
+    margin: 0;
+  }
+
+  .cta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 0.68rem 1.3rem;
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .cta:hover {
+    border-color: var(--teal);
+    background: rgba(95, 212, 194, 0.07);
+  }
+</style>

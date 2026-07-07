@@ -1,0 +1,120 @@
+---
+import { experience } from "../data/profile";
+---
+
+<section id="trajectory" class="section">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="kicker"><b>02</b> — Trajectory</p>
+      <h2>From chaos theory to topological&nbsp;qubits</h2>
+      <p class="lede">
+        A decade of research and industry — physics first, then AI at scale,
+        now both at once.
+      </p>
+    </div>
+
+    <ol class="timeline">
+      {experience.map((job, i) => (
+        <li class="entry" data-reveal style={`--reveal-i: ${Math.min(i, 4)}`}>
+          <div class="when">
+            <span class="date">{job.date}</span>
+          </div>
+          <div class="what">
+            <h3>{job.role}</h3>
+            <p class="where">
+              {job.companyUrl ? (
+                <a class="tlink" href={job.companyUrl} target="_blank" rel="noopener">
+                  {job.company}
+                </a>
+              ) : (
+                job.company
+              )}
+              <span class="loc"> · {job.location}</span>
+            </p>
+            {job.summary.map((s) => <p class="detail">{s}</p>)}
+            <ul class="tags" role="list">
+              {job.tags.map((t) => <li class="chip">{t}</li>)}
+            </ul>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .entry {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    padding-block: 2.4rem;
+    border-top: 1px solid var(--line);
+    position: relative;
+  }
+
+  .entry:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .date {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    color: var(--text-3);
+    position: sticky;
+    top: calc(var(--nav-h) + 1.5rem);
+  }
+
+  .what h3 {
+    font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+    margin-bottom: 0.45rem;
+  }
+
+  .where {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem;
+  }
+
+  .where .tlink {
+    font-family: var(--font-mono);
+  }
+
+  .loc {
+    color: var(--text-3);
+  }
+
+  .detail {
+    max-width: 62ch;
+    font-size: 0.95rem;
+    margin-bottom: 0.7em;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 1.1rem 0 0;
+    padding: 0;
+  }
+
+  @media (max-width: 720px) {
+    .entry {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .date {
+      position: static;
+    }
+  }
+</style>

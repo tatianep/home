@@ -1,0 +1,236 @@
+---
+import { identity } from "../data/profile";
+---
+
+<section id="projects" class="section">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="kicker"><b>04</b> — Projects</p>
+      <h2>Open source &amp; experiments</h2>
+      <p class="lede">
+        Pulled live from GitHub — the most recently active public repositories.
+      </p>
+    </div>
+
+    <div
+      class="repo-grid"
+      id="repo-grid"
+      data-user={identity.githubUsername}
+      data-reveal
+      style="--reveal-i: 1"
+    >
+      {[0, 1, 2].map(() => (
+        <div class="card skeleton" aria-hidden="true">
+          <div class="sk-line w60"></div>
+          <div class="sk-line w90"></div>
+          <div class="sk-line w40"></div>
+        </div>
+      ))}
+    </div>
+
+    <p class="more" data-reveal style="--reveal-i: 2">
+      <a class="mlink" href={identity.social.github} target="_blank" rel="noopener">
+        more on github ↗
+      </a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .repo-grid :global(.card) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.4rem 1.5rem;
+    min-height: 10.5rem;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .repo-grid :global(a.card:hover) {
+    border-color: rgba(95, 212, 194, 0.4);
+    transform: translateY(-3px);
+  }
+
+  .repo-grid :global(.repo-name) {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--text);
+  }
+
+  .repo-grid :global(.repo-desc) {
+    font-size: 0.88rem;
+    color: var(--text-2);
+    margin: 0;
+    flex: 1;
+  }
+
+  .repo-grid :global(.repo-meta) {
+    display: flex;
+    gap: 1.1rem;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    color: var(--text-3);
+  }
+
+  .repo-grid :global(.lang-dot) {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+    vertical-align: baseline;
+    background: var(--text-3);
+  }
+
+  .repo-grid :global(.gh-error) {
+    grid-column: 1 / -1;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-3);
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  /* skeletons */
+  .skeleton {
+    justify-content: center;
+  }
+
+  .sk-line {
+    height: 0.7rem;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #14161f 25%, #1b1e2a 50%, #14161f 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.6s infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sk-line {
+      animation: none;
+    }
+  }
+
+  .w60 { width: 60%; }
+  .w90 { width: 90%; }
+  .w40 { width: 40%; }
+
+  @keyframes shimmer {
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  .more {
+    margin: 1.6rem 0 0;
+  }
+</style>
+
+<script>
+  // Fetch the six most recently pushed, non-fork public repos and
+  // render them as cards. Falls back to a plain link on any failure.
+  const grid = document.getElementById("repo-grid");
+
+  const LANG_COLORS: Record<string, string> = {
+    Python: "#3572A5",
+    "Jupyter Notebook": "#DA5B0B",
+    JavaScript: "#f1e05a",
+    TypeScript: "#3178c6",
+    HTML: "#e34c26",
+    CSS: "#663399",
+    SCSS: "#c6538c",
+    "C++": "#f34b7d",
+    C: "#555555",
+    Fortran: "#4d41b1",
+    Astro: "#ff5a03",
+    R: "#198CE7",
+    Shell: "#89e051",
+  };
+
+  const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+  async function load(user: string) {
+    const res = await fetch(
+      `https://api.github.com/users/${user}/repos?per_page=100&sort=pushed`,
+      { headers: { Accept: "application/vnd.github+json" } }
+    );
+    if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+    const repos = (await res.json()) as any[];
+
+    return repos
+      .filter((r) => !r.fork && !r.archived)
+      .sort((a, b) => +new Date(b.pushed_at) - +new Date(a.pushed_at))
+      .slice(0, 6);
+  }
+
+  function card(repo: any): HTMLElement {
+    const a = document.createElement("a");
+    a.className = "card";
+    a.href = repo.html_url;
+    a.target = "_blank";
+    a.rel = "noopener";
+
+    const name = document.createElement("span");
+    name.className = "repo-name";
+    name.textContent = repo.name;
+
+    const desc = document.createElement("p");
+    desc.className = "repo-desc";
+    desc.textContent = repo.description ?? "No description yet — the code speaks for itself.";
+
+    const meta = document.createElement("span");
+    meta.className = "repo-meta";
+
+    if (repo.language) {
+      const lang = document.createElement("span");
+      const dot = document.createElement("span");
+      dot.className = "lang-dot";
+      const color = LANG_COLORS[repo.language];
+      if (color) dot.style.background = color;
+      lang.append(dot, repo.language);
+      meta.append(lang);
+    }
+
+    if (repo.stargazers_count > 0) {
+      const stars = document.createElement("span");
+      stars.textContent = `★ ${repo.stargazers_count}`;
+      meta.append(stars);
+    }
+
+    const pushed = new Date(repo.pushed_at);
+    const upd = document.createElement("span");
+    upd.textContent = `${MONTHS[pushed.getMonth()]} ${pushed.getFullYear()}`;
+    meta.append(upd);
+
+    a.append(name, desc, meta);
+    return a;
+  }
+
+  if (grid) {
+    const user = (grid as HTMLElement).dataset.user!;
+    load(user)
+      .then((repos) => {
+        grid.replaceChildren(...repos.map(card));
+      })
+      .catch(() => {
+        const err = document.createElement("p");
+        err.className = "gh-error";
+        err.textContent = "Could not reach GitHub right now — find everything at github.com/" + user;
+        grid.replaceChildren(err);
+      });
+  }
+</script>

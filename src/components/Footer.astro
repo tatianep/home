@@ -1,0 +1,43 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container inner">
+    <p>© {year} Tatiane Pereira dos Santos</p>
+    <p class="right">
+      designed in santa barbara · built with
+      <a href="https://astro.build" target="_blank" rel="noopener">astro</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--line);
+    padding-block: 2rem;
+  }
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer p {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--text-3);
+  }
+
+  .footer a {
+    color: var(--text-2);
+  }
+
+  .footer a:hover {
+    color: var(--teal);
+  }
+</style>

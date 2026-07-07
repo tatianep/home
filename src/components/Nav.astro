@@ -1,0 +1,154 @@
+---
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const links = [
+  { href: "#about", label: "about" },
+  { href: "#trajectory", label: "trajectory" },
+  { href: "#publications", label: "papers" },
+  { href: "#projects", label: "projects" },
+  { href: "#contact", label: "contact" },
+];
+---
+
+<header class="nav">
+  <div class="nav-inner container">
+    <a class="brand" href={`${base}/`} aria-label="Tatiane Santos — home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">tatiane&thinsp;santos</span>
+    </a>
+    <nav aria-label="Sections">
+      <ul class="links">
+        {links.map((l) => (
+          <li><a href={l.href} data-nav={l.href.slice(1)}>{l.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <a class="resume chip" href={`${base}/resume.pdf`} target="_blank" rel="noopener">
+      resume ↗
+    </a>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+    z-index: 50;
+    height: var(--nav-h);
+    background: color-mix(in srgb, var(--bg) 72%, transparent);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-shrink: 0;
+  }
+
+  .brand-mark {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--grad);
+    box-shadow: 0 0 12px rgba(95, 212, 194, 0.55);
+  }
+
+  .brand-name {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.06rem;
+    color: var(--text);
+    letter-spacing: 0.01em;
+  }
+
+  nav {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .links {
+    display: flex;
+    gap: clamp(0.75rem, 2.2vw, 1.9rem);
+    list-style: none;
+    margin: 0;
+    padding: 0 1.5rem 0 0.25rem;
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    mask-image: linear-gradient(90deg, #000 calc(100% - 1.4rem), transparent);
+  }
+
+  .links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .links a {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+    color: var(--text-2);
+    padding-block: 0.35rem;
+  }
+
+  .links a:hover {
+    color: var(--text);
+  }
+
+  .links a[aria-current="true"] {
+    color: var(--teal);
+  }
+
+  .resume {
+    flex-shrink: 0;
+    color: var(--text);
+  }
+
+  @media (max-width: 560px) {
+    .brand-name {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Highlight the nav link of the section currently in view.
+  const navLinks = new Map(
+    [...document.querySelectorAll<HTMLAnchorElement>("[data-nav]")].map((a) => [
+      a.dataset.nav!,
+      a,
+    ])
+  );
+  const sections = [...navLinks.keys()]
+    .map((id) => document.getElementById(id))
+    .filter((s): s is HTMLElement => !!s);
+
+  if ("IntersectionObserver" in window && sections.length) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          const link = navLinks.get(e.target.id);
+          if (!link) continue;
+          if (e.isIntersecting) {
+            navLinks.forEach((a) => a.removeAttribute("aria-current"));
+            link.setAttribute("aria-current", "true");
+          }
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px" }
+    );
+    sections.forEach((s) => io.observe(s));
+  }
+</script>

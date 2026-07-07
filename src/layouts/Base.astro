@@ -1,0 +1,105 @@
+---
+import "@fontsource-variable/fraunces";
+import "@fontsource-variable/fraunces/wght-italic.css";
+import "@fontsource-variable/inter";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
+import "../styles/global.css";
+import { identity } from "../data/profile";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Tatiane Santos, Ph.D. — Quantum Engineer & AI Scientist",
+  description = "Physicist at Microsoft Station Q building machine learning and computational-physics tools that accelerate topological quantum hardware — toward the first fault-tolerant quantum computer.",
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(`${base}/og.png`, Astro.site);
+
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: identity.fullName,
+  alternateName: identity.name,
+  honorificSuffix: "Ph.D.",
+  jobTitle: "Senior Quantum Engineer",
+  worksFor: { "@type": "Organization", name: "Microsoft" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Santa Barbara",
+    addressRegion: "CA",
+    addressCountry: "US",
+  },
+  email: `mailto:${identity.email}`,
+  url: canonical.href,
+  sameAs: [identity.social.github, identity.social.linkedin, identity.social.x],
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "Universidade Federal Fluminense" },
+    { "@type": "CollegeOrUniversity", name: "Universidade Federal do ABC" },
+  ],
+  knowsLanguage: ["pt", "en", "es", "fr"],
+});
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={identity.fullName} />
+    <meta name="theme-color" content="#0a0b0f" />
+    <link rel="canonical" href={canonical.href} />
+    <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <link rel="icon" href={`${base}/favicon.ico`} sizes="32x32" />
+    <meta name="generator" content={Astro.generator} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:image" content={ogImage.href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage.href} />
+
+    <script type="application/ld+json" set:html={jsonLd} />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#about">Skip to content</a>
+    <slot />
+
+    <script>
+      // Scroll-reveal: mark [data-reveal] elements visible on entry.
+      const revealed = document.querySelectorAll("[data-reveal]");
+      if ("IntersectionObserver" in window && revealed.length) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add("is-visible");
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+        );
+        revealed.forEach((el) => io.observe(el));
+      } else {
+        revealed.forEach((el) => el.classList.add("is-visible"));
+      }
+    </script>
+  </body>
+</html>

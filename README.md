@@ -1,74 +1,37 @@
-<!-- PROJECT LOGO -->
-<br />
-<p align="center">
-  <h1 align="center">Personal Website</h1>
+# tatianep.github.io/home
 
-**Original version:** <a href="https://hashirshoaeb.github.io/home">Hashir Shoaeb</a>
+Personal site of **Tatiane Santos, Ph.D.** — quantum engineer & AI scientist at Microsoft Station Q.
 
-  
+**Live site »** [tatianep.github.io/home](https://tatianep.github.io/home)
 
-  <p align="center">
-    Personal website hosted with GitHub Pages, built to showcase some of my recent projects and my resume. 
-    <br/>
-    <strong>Site URL» </strong> 
-    <a href="https://tatianep.github.io/home">tatianep.github.io/home</a>
-    <br />
-    <br />
-    <a href="https://tatianep.github.io">About Me</a>
-  </p>
-</p>
-<!-- TABLE OF CONTENTS -->
-<details>
-  <ol>
-    <li>
-      <a href="#website-preview">Website preview</a>
-    </li>
-    <li>
-      <a href="#dependencies">Dependencies</a>
-    </li>
-    <li>
-      <a href="#structure-">Structure</a>
-    </li>
-  </ol>
-</details>
+## Stack
 
-## Website Preview
+- [Astro 5](https://astro.build) — static output, zero JS by default; the only scripts shipped are the hero canvas, scroll reveals, and the live GitHub projects fetch
+- Self-hosted variable fonts ([Fraunces](https://fraunces.undercase.xyz/), Inter, IBM Plex Mono) via Fontsource
+- Hand-written canvas wave-interference animation (crests teal, troughs violet — physically honest), with `prefers-reduced-motion` support
+- Deployed to GitHub Pages via GitHub Actions ([.github/workflows/deploy.yml](.github/workflows/deploy.yml))
 
-[![Site preview](/public/social-image.png)](https://tatianep.github.io/home)
+## Editing content
 
+All resume content — roles, publications, education, honors, skills — lives in one file:
 
-## Dependencies
+```
+src/data/profile.ts
+```
 
-Dependencies defined in package.json:
+The portrait is `src/assets/portrait.jpg`, the downloadable resume is `public/resume.pdf`.
 
-[Reactjs](https://reactjs.org/)
-| [Bootstrap](https://getbootstrap.com/)
-| [Typist](https://github.com/jstejada/react-typist)
-| [GitHub API](https://developer.github.com/v3/repos/)
-| [Material-UI](https://mui.com/material-ui/)
-| [axios](https://axios-http.com/)
-| [web-vitals](https://github.com/GoogleChrome/web-vitals)
-| [scss](https://sass-lang.com/)
+## Commands
 
-## Structure
+| Command       | Action                                        |
+| ------------- | --------------------------------------------- |
+| `npm install` | Install dependencies                          |
+| `npm run dev` | Dev server at `localhost:4321/home`           |
+| `npm run build` | Production build to `./dist/`              |
+| `npm run og`  | Regenerate the social share card (`og.png`)   |
 
-- Navigation bar
-- Main Body
-  - Name | Profession
-  - Social Media
-  - Resume | About me
-- About Me
-  - Display picture
-  - Description about myself
-  - Resume button
-- Recent Projects (using GitHub API)
-- Experience (MUI multi-tab)
-  - Experience Tab
-  - Education Tab
-- Publications
-- Awards
-- Skills
-  - Technical Skills
-  - Soft Skills
-- Footer
-  - Footer Note
+## Deploying
+
+Pushing to `main` triggers the GitHub Actions workflow, which builds and publishes to GitHub Pages.
+
+One-time setup: in the repo's **Settings → Pages**, set **Source** to **GitHub Actions** (replacing the old `gh-pages` branch deployment).
