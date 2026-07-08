@@ -152,6 +152,15 @@ export interface Publication {
 
 export const publications: Publication[] = [
   {
+    year: "2026",
+    title: "20 Second Parity Lifetime in an InAs–Pb Tetron Device",
+    venue: "arXiv · Microsoft Quantum",
+    url: "https://arxiv.org/abs/2606.03884",
+    note: "20 s parity lifetime",
+    abstract:
+      "Replacing aluminum with lead — a higher-gap superconductor — makes the topological phase markedly more robust: parity switching times in an InAs–Pb tetron reach ≈ 20 seconds, orders of magnitude longer than typical µs-scale qubit operations.",
+  },
+  {
     year: "2025",
     title:
       "Distinct Lifetimes for X and Z Loop Measurements in a Majorana Tetron Device",
