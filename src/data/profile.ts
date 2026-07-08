@@ -36,7 +36,7 @@ export const about = {
   lead: "I'm a physicist at Microsoft Station Q, where machine learning, AI, and computational physics meet the hardest problem in computing: making qubits that keep their promises.",
   paragraphs: [
     "The shortest path from physics to quantum computing is a straight line. I didn't take it — I enjoy a challenge too much. My path started with a quantum transport Ph.D. in Brazil and at CEA Grenoble in France, and moved through computational materials research and machine learning at the University of Illinois at Urbana-Champaign. Then I traded a postdoc for data science in mobile games, and games for AI in global supply chains — each time choosing the problem I didn't yet know how to solve — before collapsing back onto quantum hardware. That range is the point: I translate fluently between physics, data, and engineering, and I'm at my best where those languages collide.",
-    "Away from the lab I play Brazilian classical guitar, collect languages the way other people collect stamps, and tinker with small data projects — a few of which live further down this page.",
+    "Away from the lab I play Brazilian classical guitar, chip away at my French, and tinker with small data projects — a few of which live further down this page.",
   ],
   facts: [
     { label: "Currently", value: "Senior Quantum Engineer, Microsoft Station Q" },
