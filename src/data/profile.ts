@@ -24,16 +24,14 @@ export const identity = {
 
 /** The scientific arc, oldest → newest. Shown as a mono strip in the hero. */
 export const trajectoryStrip = [
-  "chaos theory",
-  "quantum transport",
-  "ultrafast dynamics",
-  "deep learning",
-  "AI at scale",
+  "quantum dynamics",
+  "material science",
+  "AI & machine learning",
   "topological qubits",
 ];
 
 export const about = {
-  lead: "I'm a physicist at Microsoft Station Q, where machine learning, AI, and computational physics meet the hardest problem in computing: making qubits that keep their promises.",
+  lead: "I'm a physicist at Microsoft Station Q, where machine learning, AI, and computational physics meet the hardest problem in computing: turning fragile quantum states into reliable hardware.",
   paragraphs: [
     "The shortest path from physics to quantum computing is a straight line. I didn't take it. I enjoy a challenge too much. My path started with a quantum transport Ph.D. in Brazil and at CEA Grenoble in France, and moved through computational materials research and machine learning at the University of Illinois at Urbana-Champaign. Then I traded a postdoc for data science in mobile games, and games for AI in global supply chains — each time choosing the problem I didn't yet know how to solve — before collapsing back onto quantum hardware. That range is the point: I translate fluently between physics, data science and engineering, AI and machine learning, and I'm at my best where those languages collide.",
     "Away from the lab I play Brazilian classical guitar, learn new languages, and tinker with small data projects — a few of which live further down this page.",
