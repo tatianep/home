@@ -35,14 +35,14 @@ export const trajectoryStrip = [
 export const about = {
   lead: "I'm a physicist at Microsoft Station Q, where machine learning, AI, and computational physics meet the hardest problem in computing: making qubits that keep their promises.",
   paragraphs: [
-    "The shortest path from physics to quantum computing is a straight line. I didn't take it — I enjoy a challenge too much. My path started with a quantum transport Ph.D. in Brazil and at CEA Grenoble in France, and moved through computational materials research and machine learning at the University of Illinois at Urbana-Champaign. Then I traded a postdoc for data science in mobile games, and games for AI in global supply chains — each time choosing the problem I didn't yet know how to solve — before collapsing back onto quantum hardware. That range is the point: I translate fluently between physics, data, and engineering, and I'm at my best where those languages collide.",
-    "Away from the lab I play Brazilian classical guitar, chip away at my French, and tinker with small data projects — a few of which live further down this page.",
+    "The shortest path from physics to quantum computing is a straight line. I didn't take it. I enjoy a challenge too much. My path started with a quantum transport Ph.D. in Brazil and at CEA Grenoble in France, and moved through computational materials research and machine learning at the University of Illinois at Urbana-Champaign. Then I traded a postdoc for data science in mobile games, and games for AI in global supply chains — each time choosing the problem I didn't yet know how to solve — before collapsing back onto quantum hardware. That range is the point: I translate fluently between physics, data science and engineering, AI and machine learning, and I'm at my best where those languages collide.",
+    "Away from the lab I play Brazilian classical guitar, learn new languages, and tinker with small data projects — a few of which live further down this page.",
   ],
   facts: [
     { label: "Currently", value: "Senior Quantum Engineer, Microsoft Station Q" },
     { label: "Based in", value: "Santa Barbara, California" },
-    { label: "Languages", value: "Portuguese · Spanish · English · French" },
-    { label: "Off hours", value: "Brazilian classical guitar" },
+    { label: "Languages", value: "Portuguese · Spanish · English · Learning French" },
+    { label: "Off hours", value: "Acoustic guitar · Drums · Languages" },
   ],
 };
 
@@ -71,26 +71,16 @@ export const experience: Role[] = [
   {
     company: "ADM",
     companyUrl: "https://www.adm.com/",
-    role: "Data Scientist — Artificial Intelligence",
-    date: "Sep 2023 — Nov 2024",
+    role: "AI Engineer & Data Science",
+    date: "Oct 2022 — Nov 2024",
     location: "Cincinnati, OH",
     summary: [
-      "Built end-to-end ML for nutrition, supply chain, and logistics at a Fortune 50 company, with impact measured in millions of dollars.",
-      "Developed AI chatbots that let technical and non-technical teams interrogate files and datasets, and taught global senior leadership how to put AI to work.",
-    ],
-    tags: ["LLMs", "Azure ML", "Supply chain"],
-  },
-  {
-    company: "ADM",
-    companyUrl: "https://www.adm.com/",
-    role: "Data Scientist & IT Project Manager",
-    date: "Oct 2022 — Sep 2023",
-    location: "São Paulo, Brazil",
-    summary: [
-      "Key link between Brazil- and US-based teams, unlocking AI initiatives across South America.",
+      "Built end-to-end ML workflows for nutrition, supply chain, and logistics, recommending customer products, marketing strategies and logistics decisions, with impact measured in millions of dollars.",
+      "AI workflows integrated with data pipelines, letting technical and non-technical teams interrogate files and datasets directly, and taught global senior leadership how to leverage AI.",
+      "Bridged international collaborations (Brazil–US), unlocking AI initiatives across South America.",
       "Turned web-scraped data, geo-analysis, clustering, and neural networks into sharper marketing strategy and personalized customer experiences.",
     ],
-    tags: ["Neural networks", "Geo-analysis", "Clustering"],
+    tags: ["LLMs", "Neural networks", "Operations Research", "Cluster Analysis"],
   },
   {
     company: "Wildlife Studios",
@@ -99,10 +89,9 @@ export const experience: Role[] = [
     date: "Dec 2021 — Oct 2022",
     location: "São Paulo, Brazil",
     summary: [
-      "Shipped weekly models for pricing, engagement, anomaly detection, recommendations, and A/B testing for mobile games at massive scale.",
-      "Converted data models into decisions with revenue impact of up to 20% at reduced implementation cost.",
+      "Shipped models for pricing, engagement, anomaly detection, recommendation systems, and A/B testing for mobile games at massive scale (over 100 million monthly active users).",
     ],
-    tags: ["Pricing", "A/B testing", "Recommender systems"],
+    tags: ["Causal Inference", "Machine Learning", "SQL", "R"],
   },
   {
     company: "University of Illinois at Urbana-Champaign",
@@ -123,9 +112,9 @@ export const experience: Role[] = [
     date: "Jun 2017 — Dec 2017",
     location: "Grenoble, France",
     summary: [
-      "Collaborated with the developers of a quantum-dynamics Python package (100K+ downloads) on its extended release, writing HPC simulations of particle dynamics in semiconductors and 2D materials.",
+      "Implemented a plasmon collider for the tkwant package (100K+ downloads), using HPC simulations of particle dynamics in semiconductors and 2D materials, revealing novel phenomena.",
     ],
-    tags: ["HPC", "Python", "Quantum dynamics"],
+    tags: ["HPC", "Python", "Quantum dynamics", "Physics modeling"],
   },
   {
     company: "Universidade Federal Fluminense",
@@ -137,7 +126,7 @@ export const experience: Role[] = [
       "Built the most precise model of the Quantum Hall Effect in realistic-size samples of its time using Python and Fortran on sparse-matrix linear algebra.",
       "Graduated with the highest GPA in the department — a 99.9% score.",
     ],
-    tags: ["Quantum transport", "Fortran", "Sparse solvers"],
+    tags: ["Quantum transport", "Sparse solvers", "Computational physics"],
   },
 ];
 
